@@ -4,6 +4,7 @@ import {select} from "d3-selection";
 import {streamFactory} from "./streamFactory";
 import {render} from "./view/render";
 import {getColor} from "./randomColorGenerator";
+import {initialRender} from "./view/render";
 
 export {svg}
 
@@ -30,4 +31,4 @@ newStreamAdded.subscribe((stream) => {
     render(stream)
 });
 
-render([]);  // Initial
+initialRender();

@@ -2,14 +2,14 @@ import {scaleLinear} from "d3-scale";
 import {axisBottom, axisLeft} from "d3-axis";
 import {svg} from '../index'
 
-export function renderXAxis() {
+export function renderXAxis(renderAxisData) {
     const scale = scaleLinear()
         .domain([100, 0])
         .range([100, 0] as ReadonlyArray<number>);
     const axis = axisBottom(scale).ticks(5);
     svg.append("g").attr("transform", "translate(16,88)").style("font-size", "2").call(axis);
 }
-export function renderYAxis () {
+export function renderYAxis (renderAxisData) {
     const scale = scaleLinear()
         .domain([0, 100])
         .range([100, 0] as ReadonlyArray<number>);
