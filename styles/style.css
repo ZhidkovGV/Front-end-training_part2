@@ -25,8 +25,8 @@ html, body {
     margin-top: 5%;
 }
 
-.axis-bottom :first-child {
-    display: none;
+svg {
+    padding: 5%;
 }
 
 .axis-left :first-child {

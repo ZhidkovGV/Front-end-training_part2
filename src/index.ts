@@ -1,22 +1,19 @@
 import {combineLatest, fromEvent} from 'rxjs'
 import {switchMap} from 'rxjs/operators'
-import {select} from "d3-selection";
 import {streamFactory} from "./streamFactory";
 import {render} from "./view/render";
 import {getColor} from "./randomColorGenerator";
-import {initialRender} from "./view/render";
-
-export {svg}
 
 const addLine = document.querySelector("button");
 const getInterval = document.querySelector("input");
-const svg = select("svg");
+
 const lines = [];
 
 const drawStream = combineLatest()
     .subscribe((...args) => {
         console.log(args)
     });
+
 const newStreamAdded = fromEvent(addLine,'click')
     .pipe(
         switchMap(() => {
@@ -27,8 +24,7 @@ const newStreamAdded = fromEvent(addLine,'click')
             return combineLatest(...lines)
         })
     );
+
 newStreamAdded.subscribe((stream) => {
     render(stream)
 });
-
-initialRender();
