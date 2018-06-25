@@ -1,4 +1,3 @@
-import {scaleLinear} from "d3-scale";
 import {axisBottom, axisLeft} from "d3-axis";
 import {svg} from './render'
 

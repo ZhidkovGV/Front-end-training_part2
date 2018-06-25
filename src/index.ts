@@ -1,5 +1,5 @@
 import {combineLatest, fromEvent} from 'rxjs'
-import {switchMap} from 'rxjs/operators'
+import {distinctUntilChanged, switchMap} from 'rxjs/operators'
 import {streamFactory} from "./streamFactory";
 import {render} from "./view/render";
 import {getColor} from "./randomColorGenerator";
@@ -9,12 +9,12 @@ const getInterval = document.querySelector("input");
 
 const lines = [];
 
-const drawStream = combineLatest()
+const draw$ = combineLatest()
     .subscribe((...args) => {
         console.log(args)
     });
 
-const newStreamAdded = fromEvent(addLine,'click')
+const new$ = fromEvent(addLine, 'click')
     .pipe(
         switchMap(() => {
             const pause = parseInt(getInterval.value) || 3000;
@@ -24,7 +24,12 @@ const newStreamAdded = fromEvent(addLine,'click')
             return combineLatest(...lines)
         })
     );
-
-newStreamAdded.subscribe((stream) => {
+const removeButtons$ = new$.pipe(
+    distinctUntilChanged((streams) => streams.length)
+);
+new$.subscribe((stream) => {
     render(stream)
+});
+removeButtons$.subscribe((streams) => {
+   console.log(streams)
 });

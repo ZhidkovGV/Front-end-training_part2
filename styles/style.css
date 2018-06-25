@@ -27,9 +27,7 @@ html, body {
     margin-top: 5%;
 }
 
-.axis-left :first-child {
-    stroke-width: 5px;
-}
+
 .svg-container {
     flex-basis: 60%;
     width: 90%;
