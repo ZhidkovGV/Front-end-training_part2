@@ -7,7 +7,7 @@ html, body {
 
 .line {
     fill: none;
-    stroke-width: 0.5px;
+    stroke-width: 10px;
 }
 
 .axis-bottom {
@@ -15,20 +15,24 @@ html, body {
 }
 
 .tick line {
-    stroke-width: 0.1px;
+    stroke-width: 5px;
 }
-
-.input-wrapper {
+.line {
+    stroke-width: 5px;
+}
+.input-container {
     display: flex;
     flex-basis: 5%;
     justify-content: center;
     margin-top: 5%;
 }
 
-svg {
-    padding: 5%;
-}
-
 .axis-left :first-child {
-    stroke-width: 0.5px;
+    stroke-width: 5px;
+}
+.svg-container {
+    flex-basis: 60%;
+}
+svg {
+    padding: 1% 2%;
 }
