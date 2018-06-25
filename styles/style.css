@@ -32,6 +32,7 @@ html, body {
 }
 .svg-container {
     flex-basis: 60%;
+    width: 90%;
 }
 svg {
     padding: 1% 2%;

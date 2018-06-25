@@ -7,7 +7,7 @@ export function streamFactory(pause, color) {
             map(() => Math.random()),
             scan((acc, val) => {
                 const date = new Date();
-                const seconds = date.getSeconds();
+                const seconds = date.getTime();
                 acc.push({val, seconds, color});
                 return acc
             }, [])
