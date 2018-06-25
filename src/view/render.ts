@@ -2,8 +2,10 @@ import {renderXAxis, renderYAxis} from "./renderAxises";
 import {renderLine} from "./renderLine";
 import {scaleLinear} from "d3-scale";
 import {min, max} from "d3-array";
+import {svg} from "../index";
 
 export function render(lines) {
+    svg.selectAll("*").remove();
     const xScale = scaleLinear().domain(
         [min(lines, (item) => item["seconds"]),
          max(lines, (item) => item["seconds"])] as Array<any>

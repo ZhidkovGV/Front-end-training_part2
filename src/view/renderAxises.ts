@@ -7,12 +7,12 @@ export function renderXAxis(renderAxisData) {
         .domain([100, 0])
         .range([100, 0] as ReadonlyArray<number>);
     const axis = axisBottom(scale).ticks(5);
-    svg.append("g").attr("transform", "translate(16,88)").style("font-size", "2").call(axis);
+    svg.append("g").attr("class", "axis-bottom").attr("transform", "translate(0,92)").style("font-size", "2").call(axis);
 }
 export function renderYAxis (renderAxisData) {
     const scale = scaleLinear()
         .domain([0, 100])
         .range([100, 0] as ReadonlyArray<number>);
     const axis = axisLeft(scale).ticks(4);
-    svg.append("g").attr("transform", "translate(15, 3)").style("font-size", "2").call(axis);
+    svg.append("g").attr("class","axis-left" ).attr("transform", "translate(0, 0)").style("font-size", "2").call(axis);
 }
