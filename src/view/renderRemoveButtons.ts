@@ -12,7 +12,6 @@ export function renderRemoveButtons(lines) {
     removeLinesContainer.appendChild(tmp);
     buttons.push(tmp);
 
-    console.log(buttons);
     const removeLine$ = fromEvent(tmp, 'change');
 
     removeLine$.subscribe((event) => {

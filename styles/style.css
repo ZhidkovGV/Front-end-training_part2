@@ -24,10 +24,14 @@ html, body {
     display: flex;
     flex-basis: 5%;
     justify-content: center;
-    margin-top: 5%;
 }
 
-
+.remove-line-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    flex-basis: 5%;
+}
 .svg-container {
     flex-basis: 60%;
     width: 90%;
