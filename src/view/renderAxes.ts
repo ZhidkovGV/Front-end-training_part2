@@ -1,5 +1,3 @@
-// plural for axis - axes
-
 import {axisBottom, axisLeft} from "d3-axis";
 import {svg} from './render'
 

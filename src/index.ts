@@ -3,14 +3,13 @@
 
 import {combineLatest, fromEvent} from 'rxjs'
 import {distinctUntilChanged, share, switchMap} from 'rxjs/operators'
-import {streamFactory} from "./streamFactory";
+import {getNew$} from "./getNew$";
 import {render} from "./view/render";
 import {getColor} from "./randomColorGenerator";
 import {renderRemoveButtons} from "./view/renderRemoveButtons";
 
-// use some classes that indicate elements purpose
-const addLine = document.querySelector("button");
-const getInterval = document.querySelector("input");
+const addLine = document.querySelector(".start-new-$-with-interval");
+const getInterval = document.querySelector(".input-interval") as HTMLInputElement;
 
 const lines = [];
 const draw$ = combineLatest()
@@ -24,7 +23,7 @@ const data$ = addNew$.pipe(
     switchMap(() => {
         const pause = parseInt(getInterval.value) || 3000;
         const color = getColor();
-        const newStream = streamFactory(pause, color);
+        const newStream = getNew$(pause, color);
         lines.push(newStream);
         return combineLatest(...lines)
     }),
