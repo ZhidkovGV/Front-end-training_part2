@@ -15,7 +15,7 @@ export function renderRemoveButtons(lines) {
     const removeLine$ = fromEvent(tmp, 'change');
 
     removeLine$.subscribe((event) => {
-        if(event.target["checked"]) {
+        if (event.target["checked"]) {
             const lineToRemove = lines.find((line) => line[0].color === tmp.id);
             lineToRemove[0].shouldRender = false
         } else {
