@@ -5,13 +5,13 @@ import {countXScale, countYScale} from "./countScales";
 
 export const svg = select("svg");
 
-export function render(lines) {
+export function render(lines: Array<any>) {
     svg.selectAll("*").remove();
     const xScale = countXScale(lines);
     const yScale = countYScale(lines);
     renderYAxis(lines, yScale);
     renderXAxis(lines, xScale);
     lines.forEach((line) => {
-        if (line[0].shouldRender) renderLine(line, xScale, yScale);
+        if (line[0].shouldRender) renderLine(line, xScale as any, yScale as any);
     })
 }

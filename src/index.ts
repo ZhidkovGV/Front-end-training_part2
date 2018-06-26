@@ -8,7 +8,7 @@ import {render} from "./view/render";
 import {getColor} from "./randomColorGenerator";
 import {renderRemoveButtons} from "./view/renderRemoveButtons";
 
-const addLine = document.querySelector(".start-new-$-with-interval");
+const addLine = document.querySelector(".start-stream-with-interval");
 const getInterval = document.querySelector(".input-interval") as HTMLInputElement;
 
 const lines = [];
