@@ -8,5 +8,6 @@ export function renderLine(lineData, xScale, yScale) {
 
     svg.append('svg:path').attr("class", "line")
         .attr('style', `stroke: ${lineData[0].color}`)
+        .attr("id", `color${lineData[0].color}`)
         .attr("d", graph(lineData))
     }

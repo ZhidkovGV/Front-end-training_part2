@@ -11,7 +11,7 @@ export function render(lines) {
     const yScale = countYScale(lines);
     renderYAxis(lines, yScale);
     renderXAxis(lines, xScale);
-    lines.forEach((line, index) => {
-        renderLine(line, xScale, yScale);
+    lines.forEach((line) => {
+        if (line[0].shouldRender) renderLine(line, xScale, yScale);
     })
 }

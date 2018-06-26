@@ -8,7 +8,7 @@ export function streamFactory(pause, color) {
             scan((acc, val) => {
                 const date = new Date();
                 const seconds = date.getTime();
-                acc.push({val, seconds, color});
+                acc.push({val, seconds, color, shouldRender: true});
                 return acc
             }, [])
         );
