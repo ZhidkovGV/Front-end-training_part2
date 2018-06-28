@@ -1,6 +1,3 @@
-// overall comment: most of your functions are not strongly typed. please, type 'implicit any' cases
-// you can use 'noImplicitAny' typescript flag to find out where there are weak types
-
 import {combineLatest, fromEvent} from 'rxjs'
 import {distinctUntilChanged, share, switchMap} from 'rxjs/operators'
 import {getNew$} from "./getNew$";

@@ -2,20 +2,12 @@ import {scaleLinear} from "d3-scale";
 import {max, min} from "d3-array";
 const svg = document.querySelector('svg');
 
-export function countXScale(lines) {
+export function countScale(lines, axis) {
     const width = parseInt(getComputedStyle(svg).width) - parseInt(getComputedStyle(svg).paddingLeft);
-
-    return scaleLinear().domain(
-            [min(lines, (line) => min(line as Array<any>, (point) => point.seconds)),
-            max(lines, (line) => max(line as Array<any>, (point) => point.seconds))] as Array<any>
-    ).range([0, width] as ReadonlyArray<any>);
-}
-
-export function countYScale(lines) {
     const height = parseInt(getComputedStyle(svg).height);
 
     return scaleLinear().domain(
-            [min(lines, (line) => min(line as Array<any>, (point) => point.val)),
-            max(lines, (line) => max(line as Array<any>, (point) => point.val))] as Array<any>
-    ).range([0, height] as any);
+            [min(lines, (line) => min(line as Array<any>, (point) => axis === 'x' ? point.seconds : point.val)),
+            max(lines, (line) => max(line as Array<any>, (point) => axis === 'x' ? point.seconds : point.val))] as Array<any>
+    ).range([0, axis === 'x' ? width : height] as ReadonlyArray<any>);
 }
