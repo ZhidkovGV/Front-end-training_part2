@@ -12,16 +12,12 @@ const addLine = document.querySelector(".start-stream-with-interval");
 const getInterval = document.querySelector(".input-interval") as HTMLInputElement;
 
 const lines = [];
-const draw$ = combineLatest()
-    .subscribe((...args) => {
-        console.log(args)
-    });
 
 const addNew$ = fromEvent(addLine, 'click');
 
 const data$ = addNew$.pipe(
     switchMap(() => {
-        const pause = parseInt(getInterval.value) || 3000;
+        const pause = (parseInt(getInterval.value) || 3000);
         const color = getColor();
         const newStream = getNew$(pause, color);
         lines.push(newStream);
