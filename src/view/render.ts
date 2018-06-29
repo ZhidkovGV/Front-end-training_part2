@@ -1,4 +1,4 @@
-import {renderXAxis, renderYAxis} from "./renderAxes";
+ import {renderXAxis, renderYAxis} from "./renderAxes";
 import {renderLine} from "./renderLine";
 import {select} from "d3-selection";
 import {countScale} from "./countScales";
