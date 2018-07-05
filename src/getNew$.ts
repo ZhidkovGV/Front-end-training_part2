@@ -9,7 +9,7 @@ export function getNew$($interval, color) {
             scan((acc, val) => {
                 const date = new Date();
                 const seconds = date.getTime();
-                acc.push(acc.length > 1 ?{val, seconds} : {val, seconds,color, shouldRender: true});
+                acc.push(acc.length > 1 ? {val, seconds} : {val, seconds,color, shouldRender: true});
                 return acc
             }, [])
         );

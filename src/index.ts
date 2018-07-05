@@ -16,8 +16,8 @@ const data$ = addNew$.pipe(
     switchMap(() => {
         const pause = (parseInt(getInterval.value) || 3000);
         const color = getColor();
-        const newStream = getNew$(pause, color);
-        lines.push(newStream);
+        const new$ = getNew$(pause, color);
+        lines.push(new$);
         return combineLatest(...lines)
     }),
     share()

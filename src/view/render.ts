@@ -9,8 +9,8 @@ export function render(lines: Array<any>) {
     svg.selectAll("*").remove();
     const xScale = countScale(lines, 'x');
     const yScale = countScale(lines, 'y');
-    renderYAxis(lines, yScale);
-    renderXAxis(lines, xScale);
+    renderYAxis(yScale);
+    renderXAxis(xScale);
     lines.forEach((line) => {
         if (line[0].shouldRender) renderLine(line, xScale as any, yScale as any);
     });

@@ -7,19 +7,9 @@ html, body {
 
 .line {
     fill: none;
-    stroke-width: 10px;
-}
-
-.axis-bottom {
-    fill: none;
-}
-
-.tick line {
     stroke-width: 5px;
 }
-.line {
-    stroke-width: 5px;
-}
+
 .input-container {
     display: flex;
     flex-basis: 5%;
